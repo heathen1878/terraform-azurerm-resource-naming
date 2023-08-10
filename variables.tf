@@ -16,7 +16,7 @@ variable "environment" {
   default     = null
   type        = string
   validation {
-    condition = var.environment == "dev" || var.environment == "tst"
+    condition     = var.environment == "dev" || var.environment == "tst"
     error_message = "The environment must be one of: dev, tst"
   }
 }
@@ -26,7 +26,7 @@ variable "location" {
   default     = null
   type        = string
   validation {
-    condition = var.location == "uks" || var.location == "ukw"
+    condition     = var.location == "uks" || var.location == "ukw"
     error_message = "The location must be one of: uks, ukw"
   }
 }
@@ -36,7 +36,7 @@ variable "project_application_service" {
   default     = null
   type        = string
   validation {
-    condition = var.project_application_service == "tn" || var.project_application_service == "cs"
+    condition     = var.project_application_service == "tn" || var.project_application_service == "cs"
     error_message = "The project, application or service must be one of: tn, cs"
   }
 }
