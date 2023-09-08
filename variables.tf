@@ -16,7 +16,7 @@ variable "environment" {
   default     = null
   type        = string
   validation {
-    condition     = var.environment == "dev" || var.environment == "tst"
+    condition     = contains(["dev", "tst", "stg"], var.environment)
     error_message = "The environment must be one of: dev, tst"
   }
 }
@@ -36,9 +36,15 @@ variable "project_application_service" {
   default     = null
   type        = string
   validation {
-    condition     = var.project_application_service == "tn" || var.project_application_service == "cs"
-    error_message = "The project, application or service must be one of: tn, cs"
+    condition     = length(regexall("tn*|cs*", var.project_application_service)) > 0
+    error_message = "The project, application or service must start with one of: tn, cs"
   }
+}
+
+variable "uniqueness" {
+  description = "A uniqueness value - sourced from random"
+  default     = null
+  type        = string
 }
 
 variable "resource_type" {

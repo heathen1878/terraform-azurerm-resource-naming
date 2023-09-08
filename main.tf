@@ -2,11 +2,13 @@ data "http" "generate_resource_name" {
 
   method = "POST"
   request_body = jsonencode({
-    resourceEnvironment = var.environment,
+    resourceEnvironment = var.environment
     resourceLocation    = var.location
     resourceProjAppSvc  = var.project_application_service
     resourceType        = var.resource_type
-    
+    customComponents : {
+      uniqueness = var.uniqueness
+    }
   })
   request_headers = {
     accept       = "*/*"

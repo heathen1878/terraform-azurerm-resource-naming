@@ -1,0 +1,7 @@
+api_endpoint  = "https://..."
+api_key       = "idnvnnfvnio"
+environment   = "env"
+location      = "uksouth"
+project       = "project"
+uniqueness    = "5h6hfc"
+resource_type = "rg"
