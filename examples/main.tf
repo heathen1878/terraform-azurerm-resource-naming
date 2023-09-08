@@ -1,5 +1,7 @@
 module "generate_resource_group_name" {
 
+  source = "../"
+
   api_endpoint  = var.ant_api_endpoint
   api_key       = var.ant_api_key
   environment   = var.environment
