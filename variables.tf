@@ -15,30 +15,25 @@ variable "environment" {
   description = "The environment"
   default     = null
   type        = string
-  validation {
-    condition     = var.environment == "dev" || var.environment == "tst"
-    error_message = "The environment must be one of: dev, tst"
-  }
+
 }
 
 variable "location" {
   description = "The location"
   default     = null
   type        = string
-  validation {
-    condition     = var.location == "uks" || var.location == "ukw"
-    error_message = "The location must be one of: uks, ukw"
-  }
 }
 
-variable "project_application_service" {
+variable "project" {
   description = "The project"
   default     = null
   type        = string
-  validation {
-    condition     = var.project_application_service == "tn" || var.project_application_service == "cs"
-    error_message = "The project, application or service must be one of: tn, cs"
-  }
+}
+
+variable "uniqueness" {
+  description = "A uniqueness value - sourced from random"
+  default     = null
+  type        = string
 }
 
 variable "resource_type" {
