@@ -1,5 +1,5 @@
 resource "random_id" "resource_group" {
-  
+
   keepers = {
     environment                 = var.environment
     location                    = var.location

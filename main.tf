@@ -4,9 +4,9 @@ data "http" "generate_resource_name" {
   request_body = jsonencode({
     resourceEnvironment = var.environment
     resourceLocation    = var.location
-    resourceProjAppSvc  = var.project_application_service
     resourceType        = var.resource_type
     customComponents : {
+      project    = var.project
       uniqueness = var.uniqueness
     }
   })
